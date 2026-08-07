@@ -27,12 +27,12 @@ Este repositório tem como objetivo registrar as atividades, trabalhos e projeto
 
 | Disciplina             | Pendente | Concluído |
 |-------------------------|:--------:|:---------:|
-| Programação Web         | 1        | 0         |
+| Programação Web          | 0        | 1         |
 | Redes de Computadores    | 0        | 0         |
 | Ferramentas RAD          | 0        | 0         |
 | Eletrônica Digital       | 0        | 0         |
 | Estrutura de Dados I     | 0        | 0         |
-| **Total**                | **1**    | **0**     |
+| **Total**                | **0**    | **1**     |
 
 ---
 
