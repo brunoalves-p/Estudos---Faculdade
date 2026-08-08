@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Pessoal</title>
+<style>
+    body {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #d61c1cce;
+    }
+    .rectangle {
+        width: 1000px;
+        height: 500px;
+        background-color: #941010d5;   
+        border-radius: 25px;  
+        box-shadow: -8px 8px 10px 5px rgb(86, 12, 12),
+                     8px 10px 10px 5px rgba(86, 12, 12)
+    }
+    .square {
+        position: absolute;
+        width: 275px;
+        height: 275px;
+        background-color: #000000;   
+        border-radius: 10px; 
+
+        bottom: 300px;
+        right: 1125px;
+        z-index: 2;
+    }
+    h1 {
+        font-size: 60px;
+        position: absolute;
+        bottom: 550px;
+        right: 600px;
+        color: #410909;
+
+        z-index: 3;
+    }
+</style>
+</head>
+<body>
+    <div class = "rectangle"></div>
+    <div class = "square"></div>
+    <h1><strong>Bruno Alves Peres</strong></h1>
+</body>
+</html>
