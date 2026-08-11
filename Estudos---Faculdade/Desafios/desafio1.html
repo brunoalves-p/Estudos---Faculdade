@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Pessoal</title>
+<style>
+    body {
+        background-color: #030036;
+        margin: 0;
+    }
+
+    .container {
+        display: flex; /* Centraliza */
+        justify-content: center; /* Centraliza */
+        align-items: center; /* Centraliza */
+        min-height: 100vh; /* Centraliza */
+        position: relative; /* Adiciona a possibilidade de camadas */
+        width: min(100%, 800px, 100vh); /* Remove a barra de escrolagem usando o menor valor de largura*/
+        max-width: 800px; /* Tamanho do container*/
+        aspect-ratio: 1 / 1; /* Trava a forma aqui no caso é tamanho de 1 para 1 ou seja um quadrado*/
+        margin: 0 auto; /* Tamanho de espaçameto entre as formas*/
+    }
+
+    .rectangule {
+        position: absolute; /* Sem isso não é possivel definir qual classe sobrepoe outra*/
+        background-color: #140463; /* da cor*/
+        width: 100%; /* Tamanho*/
+        border-radius: 5%; /* Suavização de borda*/
+        aspect-ratio: 4.8 / 3; 
+        z-index: 2; /* Pertencente a camada 2*/
+
+        animation: neon-pulse 0.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes neon-pulse {
+        from {
+            box-shadow: 
+                0 0 15px #00ffc8e1,
+                0 0 30px #01f5c08e,
+                0 0 55px #f7f5f5d7;
+        }
+        to {
+            box-shadow:  
+                0 0 15px #00ffc8e1, 
+                0 0 30px #00ffc8ec,
+                0 0 55px #ffffffd7;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class = "container">
+        <div class = "rectangule"></div>
+    </div>
+</body>
+</html>
