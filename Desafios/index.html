@@ -6,46 +6,52 @@
     <title>Cartão Pessoal</title>
 <style>
     body {
-        height: 100vh;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #d61c1cce;
+        background-color: #030036;
+        margin: 0;
     }
-    .rectangle {
-        width: 1000px;
-        height: 500px;
-        background-color: #941010d5;   
-        border-radius: 25px;  
-        box-shadow: -8px 8px 10px 5px rgb(86, 12, 12),
-                     8px 10px 10px 5px rgba(86, 12, 12)
-    }
-    .square {
-        position: absolute;
-        width: 275px;
-        height: 275px;
-        background-color: #000000;   
-        border-radius: 10px; 
 
-        bottom: 300px;
-        right: 1125px;
-        z-index: 2;
+    .container {
+        display: flex; /* Centraliza */
+        justify-content: center; /* Centraliza */
+        align-items: center; /* Centraliza */
+        min-height: 100vh; /* Centraliza */
+        position: relative; /* Adiciona a possibilidade de camadas */
+        width: min(100%, 800px, 100vh); /* Remove a barra de escrolagem usando o menor valor de largura*/
+        max-width: 800px; /* Tamanho do container*/
+        aspect-ratio: 1 / 1; /* Trava a forma aqui no caso é tamanho de 1 para 1 ou seja um quadrado*/
+        margin: 0 auto; /* Tamanho de espaçameto entre as formas*/
     }
-    h1 {
-        font-size: 60px;
-        position: absolute;
-        bottom: 550px;
-        right: 600px;
-        color: #410909;
 
-        z-index: 3;
+    .rectangule {
+        position: absolute; /* Sem isso não é possivel definir qual classe sobrepoe outra*/
+        background-color: #140463; /* da cor*/
+        width: 100%; /* Tamanho*/
+        border-radius: 5%; /* Suavização de borda*/
+        aspect-ratio: 4.8 / 3; 
+        z-index: 2; /* Pertencente a camada 2*/
+
+        animation: neon-pulse 0.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes neon-pulse { /* Keyframes é um recurso para animações (em frames)*/
+        from { /* Começo da animação */
+            box-shadow: 
+                0 0 15px #00ffc8e1,
+                0 0 30px #01f5c08e,
+                0 0 55px #f7f5f5d7;
+        }
+        to { /* Final da Animação */
+            box-shadow:  
+                0 0 15px #00ffc8e1, 
+                0 0 30px #00ffc8ec,
+                0 0 55px #ffffffd7;
+        }
     }
 </style>
 </head>
 <body>
-    <div class = "rectangle"></div>
-    <div class = "square"></div>
-    <h1><strong>Bruno Alves Peres</strong></h1>
+    <div class = "container">
+        <div class = "rectangule"></div>
+    </div>
 </body>
 </html>
