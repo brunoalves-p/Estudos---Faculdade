@@ -24,13 +24,42 @@
 
     .rectangule {
         position: absolute; /* Sem isso não é possivel definir qual classe sobrepoe outra*/
-        background-color: #140463; /* da cor*/
+        background-color: #83868f; /* da cor*/
         width: 100%; /* Tamanho*/
         border-radius: 5%; /* Suavização de borda*/
         aspect-ratio: 4.8 / 3; 
         z-index: 2; /* Pertencente a camada 2*/
 
-        animation: neon-pulse 0.8s ease-in-out infinite alternate;
+        animation: neon-pulse 0.5s ease-in-out infinite alternate;
+    }
+
+    .button {
+        position: absolute;
+        background-color: rgba(226, 218, 218, 0.055);
+        width: 50%;
+        border: none;
+        border-radius: 5%;
+        font-size: 100%;
+        z-index: 3;
+        aspect-ratio: 4 / 1;
+        font-family: Stencil Std, fantasy, arial;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.2 ease, transform 0.2 ease;/*Deixa a mudança suave*/
+        box-shadow: 5px 5px 10px rgba(49, 47, 47, 0.3),
+                    -5px -5px 25px rgba(49, 47, 47, 0.5);
+    }
+
+    .button:hover {
+        background-color: rgb(104, 98, 98);;
+        box-shadow: 15px 15px 20px rgba(49, 47, 47, 0.3),
+                    -15px -15px 35px rgba(49, 47, 47, 0.5);
+        transform: translateY(5px);
+    }
+    .button:active {
+        background-color: rgb(104, 98, 98);;
+        box-shadow: 3px 3px 5px rgba(49, 47, 47, 0.3),
+                    -3px -3px 15px rgba(49, 47, 47, 0.5);
+        transform: translateY(0)
     }
 
     @keyframes neon-pulse { /* Keyframes é um recurso para animações (em frames)*/
@@ -52,6 +81,8 @@
 <body>
     <div class = "container">
         <div class = "rectangule"></div>
+        <button style = "top: 50%"class = "button">Github</button>
+        <button style = "top: 65%"class = "button">Instagram</button>
     </div>
 </body>
 </html>
