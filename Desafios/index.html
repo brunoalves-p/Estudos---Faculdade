@@ -1,88 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Cartão Pessoal</title>
-<style>
-    body {
-        background-color: #030036;
-        margin: 0;
-    }
 
-    .container {
-        display: flex; /* Centraliza */
-        justify-content: center; /* Centraliza */
-        align-items: center; /* Centraliza */
-        min-height: 100vh; /* Centraliza */
-        position: relative; /* Adiciona a possibilidade de camadas */
-        width: min(100%, 800px, 100vh); /* Remove a barra de escrolagem usando o menor valor de largura*/
-        max-width: 800px; /* Tamanho do container*/
-        aspect-ratio: 1 / 1; /* Trava a forma aqui no caso é tamanho de 1 para 1 ou seja um quadrado*/
-        margin: 0 auto; /* Tamanho de espaçameto entre as formas*/
-    }
+    <style>
 
-    .rectangule {
-        position: absolute; /* Sem isso não é possivel definir qual classe sobrepoe outra*/
-        background-color: #83868f; /* da cor*/
-        width: 100%; /* Tamanho*/
-        border-radius: 5%; /* Suavização de borda*/
-        aspect-ratio: 4.8 / 3; 
-        z-index: 2; /* Pertencente a camada 2*/
+        /* =========================
+           CONFIGURAÇÃO DA PÁGINA
+           ========================= */
 
-        animation: neon-pulse 0.5s ease-in-out infinite alternate;
-    }
-
-    .button {
-        position: absolute;
-        background-color: rgba(226, 218, 218, 0.055);
-        width: 50%;
-        border: none;
-        border-radius: 5%;
-        font-size: 100%;
-        z-index: 3;
-        aspect-ratio: 4 / 1;
-        font-family: Stencil Std, fantasy, arial;
-        cursor: pointer;
-        transition: background-color 0.3s ease, box-shadow 0.2 ease, transform 0.2 ease;/*Deixa a mudança suave*/
-        box-shadow: 5px 5px 10px rgba(49, 47, 47, 0.3),
-                    -5px -5px 25px rgba(49, 47, 47, 0.5);
-    }
-
-    .button:hover {
-        background-color: rgb(104, 98, 98);;
-        box-shadow: 15px 15px 20px rgba(49, 47, 47, 0.3),
-                    -15px -15px 35px rgba(49, 47, 47, 0.5);
-        transform: translateY(5px);
-    }
-    .button:active {
-        background-color: rgb(104, 98, 98);;
-        box-shadow: 3px 3px 5px rgba(49, 47, 47, 0.3),
-                    -3px -3px 15px rgba(49, 47, 47, 0.5);
-        transform: translateY(0)
-    }
-
-    @keyframes neon-pulse { /* Keyframes é um recurso para animações (em frames)*/
-        from { /* Começo da animação */
-            box-shadow: 
-                0 0 15px #00ffc8e1,
-                0 0 30px #01f5c08e,
-                0 0 55px #f7f5f5d7;
+        body {
+            background-color: #030036;
+            margin: 0;
         }
-        to { /* Final da Animação */
-            box-shadow:  
-                0 0 15px #00ffc8e1, 
-                0 0 30px #00ffc8ec,
-                0 0 55px #ffffffd7;
+
+
+        /* =========================
+           CONTAINER PRINCIPAL
+           ========================= */
+
+        .container {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            min-height: 100vh;
+
+            position: relative;
+
+            width: min(100%, 800px, 100vh);
+            max-width: 800px;
+
+            aspect-ratio: 1 / 1;
+
+            margin: 0 auto;
         }
-    }
-</style>
+
+
+        /* =========================
+           CARTÃO
+           ========================= */
+
+        .rectangule {
+            position: absolute;
+
+            background-color: #83868f;
+
+            width: 100%;
+
+            aspect-ratio: 4.8 / 3;
+
+            border-radius: 5%;
+
+            z-index: 2;
+
+            /* Animação do brilho */
+            animation: neon-pulse 0.5s ease-in-out infinite alternate;
+        }
+
+
+        /* =========================
+           FOTO DE PERFIL
+           ========================= */
+
+        .imageprofile {
+            position: absolute;
+
+            width: 17%;
+            height: 15%;
+
+            border-radius: 100%;
+
+            border: 8px solid rgba(6, 12, 68, 0.988);
+
+            top: 25%;
+            right: 80%;
+
+            z-index: 4;
+
+            object-fit: cover;
+        }
+
+
+        /* =========================
+           TÍTULO
+           ========================= */
+
+        h1 {
+            position: absolute;
+
+            color: #07152e;
+
+            font-family: Luminari, fantasy, Arial, sans-serif;
+
+            font-size: 350%;
+            font-weight: bold;
+
+            top: 27%;
+            right: 16%;
+
+            /* Espaçamento entre palavras */
+            word-spacing: 15px;
+
+            /* Espaçamento entre letras */
+            letter-spacing: 3px;
+
+            z-index: 5;
+        }
+
+
+        /* =========================
+           BOTÕES
+           ========================= */
+
+        .button {
+            position: absolute;
+
+            background-color: rgba(226, 218, 218, 0.055);
+
+            width: 50%;
+
+            aspect-ratio: 4 / 1;
+
+            border: none;
+            border-radius: 5%;
+
+            font-size: 100%;
+
+            font-family: "Stencil Std", fantasy, Arial, sans-serif; 
+
+            cursor: pointer;
+
+            z-index: 3;
+
+            /* Transições suaves */
+            transition:
+                background-color 0.3s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+
+            /* Sombra inicial */
+            box-shadow:
+                5px 5px 10px rgba(49, 47, 47, 0.3),
+                -5px -5px 25px rgba(49, 47, 47, 0.5);
+        }
+
+
+        /* =========================
+           BOTÃO AO PASSAR O MOUSE
+           ========================= */
+
+        .button:hover {
+            background-color: rgb(7, 20, 41);
+
+            color: rgba(223, 227, 232, 0.872);
+
+            box-shadow:
+                15px 15px 20px rgba(49, 47, 47, 0.3),
+                -15px -15px 35px rgba(49, 47, 47, 0.5);
+
+            transform: translateY(5px);
+        }
+
+
+        /* =========================
+           BOTÃO AO CLICAR
+           ========================= */
+
+        .button:active {
+            background-color: rgb(3, 3, 89);
+
+            color: white;
+
+            box-shadow:
+                3px 3px 5px rgba(49, 47, 47, 0.3),
+                -3px -3px 15px rgba(49, 47, 47, 0.5);
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           ANIMAÇÃO NEON
+           ========================= */
+
+        @keyframes neon-pulse {
+
+            from {
+                box-shadow:
+                    0 0 15px #00ffc8e1,
+                    0 0 30px #01f5c08e,
+                    0 0 55px #f7f5f5d7;
+            }
+
+            to {
+                box-shadow:
+                    0 0 15px #00ffc8e1,
+                    0 0 30px #00ffc8ec,
+                    0 0 55px #ffffffd7;
+            }
+        }
+
+    </style>
 </head>
+
+
 <body>
-    <div class = "container">
-        <div class = "rectangule"></div>
-        <button style = "top: 50%"class = "button">Github</button>
-        <button style = "top: 65%"class = "button">Instagram</button>
+
+    <div class="container">
+
+        <!-- Cartão -->
+        <div class="rectangule"></div>
+
+
+        <!-- Botões -->
+        <button style="top: 50%;" class="button">
+            Github
+        </button>
+
+        <button style="top: 63%;" class="button">
+            Instagram
+        </button>
+
+
+        <!-- Foto -->
+        <img
+            src="profile.jpg"
+            alt="Foto de perfil"
+            class="imageprofile"
+        >
+
+
+        <!-- Nome -->
+        <h1>
+            Bruno Alves Peres
+        </h1>
+
     </div>
+
 </body>
+
 </html>
